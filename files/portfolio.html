@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elias - Web Designer & Front-end Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: hsl(287 60% 65%);
+            --primary-op: hsl(287 60% 65% / 0.1);
+            --gray: hsl(219 14% 71%);
+            --gray-op: hsl(219 14% 71% / 0.1);
+            --background: hsl(218 12% 18%);
+            --white: hsl(0 0% 100%);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, a, img, ol, ul, li, fieldset, form, label, article, aside, details, header, nav, section, summary {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        body {
+            min-height: 100vh;
+            line-height: 1.5;
+            background-color: var(--background);
+            color: var(--white);
+            font-family: "Fira Code", monospace;
+            display: flex;
+            gap: 112px;
+            flex-direction: column;
+        }
+
+        .media-header {
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            left: 17px;
+            gap: 8px;
+            top: 8px;
+            z-index: 100;
+        }
+
+        .media-header__links {
+            display: grid;
+            grid-auto-columns: 1fr;
+        }
+
+        .media-header__line {
+            width: 1px;
+            height: 191px;
+            background-color: var(--gray);
+            display: block;
+            margin-top: 8px;
+        }
+
+        .media__icon {
+            width: 32px;
+            height: 32px;
+            text-decoration: none;
+            display: block;
+            transition: opacity 0.3s;
+        }
+
+        .media__icon:hover {
+            opacity: 0.7;
+        }
+
+        .media__icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .header {
+            padding-top: 32px;
+            padding-bottom: 8px;
+            background-color: var(--background);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        .header__inner {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .logo {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .logo__img {
+            width: 16px;
+            height: 16px;
+        }
+
+        .logo__name {
+            font-weight: 700;
+        }
+
+        .header__links {
+            margin-left: auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+        }
+
+        .header__link {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .header__link_active {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .header__link::before {
+            content: "#";
+            color: var(--primary);
+            font-weight: normal;
+        }
+
+        .header__link:hover {
+            color: var(--white);
+        }
+
+        .content {
+            margin-top: 112px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 112px;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 16px;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .hero__content, .hero__illustrations {
+            flex: 1 1 0;
+        }
+
+        .hero__illustrations {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hero__title {
+            min-width: 300px;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .hero__title span {
+            color: var(--primary);
+        }
+
+        .hero__description {
+            color: var(--gray);
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid var(--primary);
+            font-weight: 500;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background-color: var(--primary-op);
+        }
+
+        .hero .dots {
+            position: absolute;
+            top: 40%;
+            width: 12vmin;
+            left: 70%;
+            z-index: 4;
+        }
+
+        .dots circle {
+            fill: var(--gray);
+        }
+
+        .hero__logo {
+            position: absolute;
+            width: 30vmin;
+            top: 10%;
+            z-index: 1;
+            aspect-ratio: 1;
+        }
+
+        .hero__image {
+            position: relative;
+            z-index: 2;
+            border-bottom: 1px solid var(--primary);
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+        }
+
+        .hero__status {
+            padding: 8px;
+            border: 1px solid var(--gray);
+            color: var(--gray);
+            margin: 0 auto;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            top: -1px;
+            z-index: 5;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .hero__status::before {
+            content: "";
+            display: inline-block;
+            aspect-ratio: 1;
+            width: 16px;
+            background-color: var(--primary-op);
+            border: 1px solid var(--primary);
+        }
+
+        .hero__status a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        .hero__status a:hover {
+            color: var(--primary);
+        }
+
+        .quote {
+            border: 1px solid var(--gray);
+            position: relative;
+            margin: 0;
+        }
+
+        .quote::before,
+        .quote::after {
+            content: '"';
+            position: absolute;
+            color: var(--gray);
+            font-size: 64px;
+            font-weight: 700;
+            background-image: linear-gradient(var(--background), var(--background));
+            background-size: 100% 40%;
+            background-repeat: no-repeat;
+        }
+
+        .quote::before {
+            top: -32px;
+            left: 16px;
+        }
+
+        .quote::after {
+            bottom: -64px;
+            right: 16px;
+        }
+
+        .quote__text {
+            padding: 32px;
+            font-size: 24px;
+            font-weight: 500;
+            background-color: var(--background);
+        }
+
+        .quote__author {
+            position: absolute;
+            color: var(--gray);
+            border: 1px solid var(--gray);
+            padding: 8px;
+            right: -1px;
+            font-size: 16px;
+        }
+
+        .quote__author::before {
+            content: "- ";
+        }
+
+        .h2 {
+            font-size: 32px;
+            font-weight: 500;
+            position: relative;
+            float: none;
+            clear: both;
+            display: inline-block;
+        }
+
+        .h2::before {
+            content: "#";
+            color: var(--primary);
+        }
+
+        .h2::after {
+            content: "";
+            display: block;
+            width: 10vw;
+            height: 1px;
+            background-color: var(--primary);
+            position: absolute;
+            transform: translate(100%, -50%);
+            right: -16px;
+            top: 50%;
+        }
+
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            align-items: start;
+            margin-top: 48px;
+        }
+
+        .project {
+            border: 1px solid var(--gray);
+        }
+
+        .project__image {
+            border-bottom: 1px solid var(--gray);
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, var(--background) 0%, hsl(218 12% 15%) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+
+        .project__content {
+            padding: 16px;
+        }
+
+        .project__name {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .project__description {
+            color: var(--gray);
+            margin: 16px 0;
+        }
+
+        .project__techs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            color: var(--gray);
+            padding: 8px;
+            border-bottom: 1px solid var(--gray);
+        }
+
+        .project__links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        @media (max-width: 1024px) {
+            .media-header {
+                display: none;
+            }
+
+            .header__links {
+                display: none;
+            }
+
+            .header {
+                padding-top: 16px;
+            }
+
+            .project-list {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="media-header">
+        <span class="media-header__line"></span>
+        <div class="media-header__links">
+            <a href="mailto:elias.devis@protonmail.com" class="media__icon" title="Email" aria-label="Email">
+                <img src="images/icons/email.svg" alt="Email">
+            </a>
+            <a href="https://github.com/EliasDevis" class="media__icon" title="GitHub" aria-label="GitHub">
+                <img src="images/icons/github.svg" alt="GitHub">
+            </a>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="header__inner">
+            <div class="logo">
+                <img src="images/projects/logo.svg" alt="Logo" class="logo__img">
+                <div class="logo__name">Elias</div>
+            </div>
+            <nav class="header__links">
+                <a href="#" class="header__link header__link_active">home</a>
+                <a href="#projects" class="header__link">projects</a>
+                <a href="#about" class="header__link">about-me</a>
+                <a href="#contacts" class="header__link">contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <section class="container">
+            <div class="hero">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        Elias is a <span>web designer</span> and <span>front-end developer</span>
+                    </h1>
+                    <p class="hero__description">He crafts responsive websites where technologies meet creativity</p>
+                    <a href="#contacts" class="button">Contact me!!</a>
+                </div>
+                <div class="hero__illustrations">
+                    <img src="images/projects/logo-outline.svg" alt="" class="hero__logo">
+                    <img src="images/projects/hero.png" alt="Hero illustration" class="hero__image">
+                    <svg class="dots" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="10" cy="10" r="2"/>
+                        <circle cx="30" cy="10" r="2"/>
+                        <circle cx="50" cy="10" r="2"/>
+                        <circle cx="70" cy="10" r="2"/>
+                        <circle cx="90" cy="10" r="2"/>
+                        <circle cx="10" cy="30" r="2"/>
+                        <circle cx="30" cy="30" r="2"/>
+                        <circle cx="50" cy="30" r="2"/>
+                        <circle cx="70" cy="30" r="2"/>
+                        <circle cx="90" cy="30" r="2"/>
+                        <circle cx="10" cy="50" r="2"/>
+                        <circle cx="30" cy="50" r="2"/>
+                        <circle cx="50" cy="50" r="2"/>
+                        <circle cx="70" cy="50" r="2"/>
+                        <circle cx="90" cy="50" r="2"/>
+                        <circle cx="10" cy="70" r="2"/>
+                        <circle cx="30" cy="70" r="2"/>
+                        <circle cx="50" cy="70" r="2"/>
+                        <circle cx="70" cy="70" r="2"/>
+                        <circle cx="90" cy="70" r="2"/>
+                        <circle cx="10" cy="90" r="2"/>
+                        <circle cx="30" cy="90" r="2"/>
+                        <circle cx="50" cy="90" r="2"/>
+                        <circle cx="70" cy="90" r="2"/>
+                        <circle cx="90" cy="90" r="2"/>
+                    </svg>
+                    <div class="hero__status">
+                        Currently working on <a href="#">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <blockquote class="quote">
+                <p class="quote__text">With great power comes great electricity bill</p>
+                <cite class="quote__author">Dr. Who</cite>
+            </blockquote>
+        </section>
+
+        <section id="projects" class="container">
+            <h2 class="h2">projects</h2>
+            <div class="project-list">
+                <article class="project">
+                    <div class="project__image">Project Image</div>
+                    <div class="project__techs">HTML SCSS Python Flask</div>
+                    <div class="project__content">
+                        <h3 class="project__name">ChertNodes</h3>
+                        <p class="project__description">Minecraft servers hosting</p>
+                        <div class="project__links">
+                            <a href="#" class="button">Live <~></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <div class="project__image">Project Image</div>
+                    <div class="project__techs">React Express Discord.js Node.js</div>
+                    <div class="project__content">
+                        <h3 class="project__name">ProtectX</h3>
+                        <p class="project__description">Discord anti-crash bot</p>
+                        <div class="project__links">
+                            <a href="#" class="button">Live <~></a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project">
+                    <div class="project__image">Project Image</div>
+                    <div class="project__techs">CSS Express Node.js</div>
+                    <div class="project__content">
+                        <h3 class="project__name">Kahoot Answers Viewer</h3>
+                        <p class="project__description">Get answers to your kahoot quiz</p>
+                        <div class="project__links">
+                            <a href="#" class="button">Live <~></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

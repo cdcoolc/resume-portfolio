@@ -1,0 +1,67 @@
+/* Design Tokens - Reusable CSS Variables */
+
+:root {
+    /* Colors - Primary */
+    --primary: hsl(287 60% 65%);
+    --primary-op: hsl(287 60% 65% / 0.1);
+    
+    /* Colors - Neutral */
+    --background: hsl(218 12% 18%);
+    --background-dark: hsl(218 12% 15%);
+    --background-darker: hsl(218 12% 12%);
+    
+    /* Colors - Text */
+    --white: hsl(0 0% 100%);
+    --gray: hsl(219 14% 71%);
+    --gray-op: hsl(219 14% 71% / 0.1);
+    
+    /* Typography - Font Family */
+    --font-primary: "Fira Code", monospace;
+    
+    /* Typography - Font Weights */
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    
+    /* Typography - Font Sizes */
+    --font-size-display: 32px;
+    --font-size-large: 24px;
+    --font-size-base: 16px;
+    --font-size-quote-mark: 64px;
+    
+    /* Typography - Line Height */
+    --line-height-base: 1.5;
+    
+    /* Spacing - Base Unit: 8px */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-2xl: 112px;
+    
+    /* Layout - Container */
+    --container-max-width: 1024px;
+    
+    /* Layout - Component Sizes */
+    --media-header-left: 16px;
+    --hamburger-width: 32px;
+    --media-icon-size: 32px;
+    --logo-size: 16px;
+    --status-badge-icon: 16px;
+    
+    /* Borders */
+    --border-width: 1px;
+    --border-default: var(--border-width) solid var(--gray);
+    --border-primary: var(--border-width) solid var(--primary);
+    
+    /* Transitions */
+    --transition-default: 0.3s;
+    
+    /* Breakpoints (for reference in media queries) */
+    --breakpoint-desktop: 1024px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-mobile: 500px;
+}

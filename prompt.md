@@ -485,14 +485,7 @@ Status: Currently exploring new opportunities in Financial Analytics
 ### TODO 4.2: Update About Section
 Replace placeholder with:
 ```
-Financial Reporting Analyst with over 7 years of experience in business 
-intelligence, financial planning & analysis, and workflow automation. Expert 
-in leveraging Power BI, Alteryx, SQL, and Oracle systems to transform complex 
-financial data into actionable insights. Proven track record managing $200M+ 
-operations, automating reporting processes, and delivering strategic 
-recommendations to senior leadership. Passionate about using data analytics 
-and emerging technologies to drive financial efficiency and strategic 
-decision-making.
+I’m a Financial Reporting Analyst with over seven years of experience turning financial data into meaningful stories. I love building smart dashboards, automating workflows, and helping leaders make confident, data-driven decisions. Tools like Power BI, Alteryx, SQL, and Oracle are my creative toolkit for bringing clarity and efficiency to complex operations.
 ```
 
 ### TODO 4.3: Update Skills Section
@@ -514,7 +507,7 @@ Financial Management, Oracle OTBI, Anaplan, Python (Data Analytics & Automation)
 **Web Development & Applications:**
 ```
 React & Next.js (Web Application Development), TypeScript & JavaScript, 
-Tailwind CSS & Modern UI Design, RESTful APIs & Data Integration, Claude AI 
+Tailwind CSS & Modern UI Design, RESTful APIs & Data Integration, AI 
 & LLM Integration, Full-Stack Development Concepts
 ```
 

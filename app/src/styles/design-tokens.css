@@ -30,6 +30,7 @@
     --font-size-large: 24px;
     --font-size-base: 16px;
     --font-size-quote-mark: 64px;
+    --font-size-small: 14px;
     
     /* Typography - Line Height */
     --line-height-base: 1.5;
@@ -43,7 +44,7 @@
     --space-2xl: 112px;
     
     /* Layout - Container */
-    --container-max-width: 1024px;
+    --container-max-width: 992px;
     
     /* Layout - Component Sizes */
     --media-header-left: 16px;
@@ -59,6 +60,11 @@
     
     /* Transitions */
     --transition-default: 0.3s;
+    
+    /* Z-index scale */
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-fixed: 999;
     
     /* Breakpoints (for reference in media queries) */
     --breakpoint-desktop: 1024px;

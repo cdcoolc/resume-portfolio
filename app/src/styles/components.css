@@ -52,6 +52,8 @@
     border: var(--border-default);
     display: flex;
     flex-direction: column;
+    transition: transform var(--transition-default), box-shadow var(--transition-default);
+    contain: layout style paint;
 }
 
 .project__image {
@@ -121,11 +123,31 @@
 .section__title::after {
     content: '';
     height: 1px;
-    width: 10vw;
+    width: clamp(80px, 10vw, 200px);
     background-color: var(--primary);
     position: absolute;
     right: calc(-10vw - var(--space-md));
     top: 50%;
+}
+/* Focus states for accessibility */
+.button:focus,
+.button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+a:focus-visible,
+.media__icon:focus,
+.media__icon:focus-visible,
+.header__link:focus,
+.header__link:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 /* Skills Block */

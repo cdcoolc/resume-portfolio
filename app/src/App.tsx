@@ -13,6 +13,7 @@ import { Skills } from './components/Skills'
 import { useEffect } from 'react'
 import { ProjectsPage } from './pages/ProjectsPage'
 import { SkillsPage } from './pages/SkillsPage'
+import { AboutMePage } from './pages/AboutMePage'
 
 const NAV_SECTIONS = ['home', 'projects', 'about', 'experience', 'contacts'] as const
 
@@ -104,6 +105,8 @@ function App() {
         <ProjectsPage />
       ) : route === '/skills' ? (
         <SkillsPage />
+      ) : route === '/about-me' ? (
+        <AboutMePage />
       ) : (
       <main className="container content" id="home">
         <section>
@@ -128,7 +131,17 @@ function App() {
                   [10, 30, 50, 70, 90].map((y) => <circle key={`${x}-${y}`} cx={x} cy={y} r="2" />),
                 )}
               </svg>
-              <div className="hero__status">Open for new opportunities</div>
+              <div className="hero__status">Open for new opportunities
+                <svg
+                  className="hero__status-border"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <rect x="0.5" y="0.5" width="99" height="99" pathLength="400" />
+                </svg>
+              </div>
             </div>
           </div>
         </section>
@@ -143,38 +156,45 @@ function App() {
         <Projects />
 
         <section id="about">
-          <div className="section__header">
+          <div className="section__header" style={{ alignItems: 'baseline' }}>
             <h2 className="section__title">about</h2>
+            <a href="#/about-me" className="header__link" style={{ marginLeft: 'auto' }}>
+              Read more ~&gt;
+            </a>
           </div>
           <div className="about">
-            <div className="about__text">
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 'var(--space-md)' }}>
-                <div style={{ border: '1px solid var(--gray)', padding: 'var(--space-md)', display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)' }}>
-                  <span style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-semibold)', color: 'var(--primary)' }}>7+</span>
-                  <span className="text-gray">Years Experience</span>
-                </div>
-                <div style={{ border: '1px solid var(--gray)', padding: 'var(--space-md)', display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)' }}>
-                  <span style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-semibold)', color: 'var(--primary)' }}>$200M+</span>
-                  <span className="text-gray">Operations Managed</span>
-                </div>
-                <div style={{ border: '1px solid var(--gray)', padding: 'var(--space-md)', display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)' }}>
-                  <span style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-semibold)', color: 'var(--primary)' }}>40%</span>
-                  <span className="text-gray">Efficiency Gains</span>
-                </div>
-                <div style={{ border: '1px solid var(--gray)', padding: 'var(--space-md)', display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)' }}>
-                  <span style={{ fontSize: 'var(--font-size-large)', fontWeight: 'var(--font-semibold)', color: 'var(--primary)' }}>✓</span>
-                  <span className="text-gray">Alteryx Certified</span>
-                </div>
-              </div>
+            <div className="about-cards">
+              <article className="about-card fade-in">
+                <h3 className="about-card__title">Automated Financial Workflows</h3>
+                <p className="about-card__text">Designed and deployed Alteryx workflows that cut manual reporting time by 50% and improved monthly close accuracy by 30%.</p>
+                <p className="about-card__meta">FIS — 2022–2025</p>
+              </article>
+              <article className="about-card fade-in">
+                <h3 className="about-card__title">Power BI Executive Dashboards</h3>
+                <p className="about-card__text">Built real-time Power BI dashboards that provided visibility into $200M+ expense and capital operations, accelerating leadership decisions.</p>
+                <p className="about-card__meta">FIS — 2022–2025</p>
+              </article>
+              <article className="about-card fade-in">
+                <h3 className="about-card__title">Cross-System Data Integration</h3>
+                <p className="about-card__text">Integrated over five financial data sources using SQL and API-based pipelines, improving completeness and reliability of management reporting.</p>
+                <p className="about-card__meta">FIS — 2023</p>
+              </article>
+              <article className="about-card fade-in">
+                <h3 className="about-card__title">AI-Enabled Financial Tools</h3>
+                <p className="about-card__text">Developed a Python-based currency conversion tool using live exchange-rate APIs, reducing manual prep time by 60% and enabling global reporting standardization.</p>
+                <p className="about-card__meta">AI Solutions Initiative — 2024</p>
+              </article>
+              <article className="about-card fade-in">
+                <h3 className="about-card__title">Strategic Capital Investment Analysis</h3>
+                <p className="about-card__text">Conducted NPV and IRR analyses for $100M+ capital investments, driving strategic decision-making and optimizing financial outcomes.</p>
+                <p className="about-card__meta">CIT Bank — 2017–2022</p>
+              </article>
+              <article className="about-card fade-in">
+                <h3 className="about-card__title">Process Optimization &amp; Compliance</h3>
+                <p className="about-card__text">Standardized quarter-close processes, reducing cycle time by 35% while maintaining 99.8% reporting accuracy across global sites.</p>
+                <p className="about-card__meta">FIS — 2023</p>
+              </article>
             </div>
-            <div className="about__image">
-              <img src={aboutImage} alt="Masih Azizpour collaborative illustration" />
-            </div>
-            <svg className="dots about__dots" width="84" height="84" viewBox="0 0 84 84" aria-hidden="true">
-              {[6, 18, 30, 42, 54, 66, 78].flatMap((x) =>
-                [6, 18, 30, 42, 54, 66, 78].map((y) => <circle key={`${x}-${y}`} cx={x} cy={y} r="2" />),
-              )}
-            </svg>
           </div>
         </section>
 

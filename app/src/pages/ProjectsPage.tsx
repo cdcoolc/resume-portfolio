@@ -20,21 +20,21 @@ export const ProjectsPage = () => {
               <div className="project__content">
                 <h3 className="project__name">{project.title}</h3>
                 <p className="project__description">{project.description}</p>
-                <div className="project__links">
-                  {project.liveUrl && (
-                    <a href={project.liveUrl} className="button">
-                      Live =&gt;
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a href={project.githubUrl} className="button">
-                      Github =&gt;
-                    </a>
-                  )}
-                </div>
               </div>
             </article>
           ))}
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 'var(--space-xl)' }}>
+          <a
+            href="#home"
+            className="header__link"
+            onClick={(e) => {
+              e.preventDefault()
+              window.location.hash = ''
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+          >&lt;Back</a>
         </div>
       </section>
     </main>

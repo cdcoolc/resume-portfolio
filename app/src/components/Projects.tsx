@@ -19,7 +19,7 @@ export const Projects = () => {
 
       <div className="project-list">
         {featuredProjects.map((project) => (
-          <article key={project.id} className="project">
+          <article key={project.id} className="project fade-in">
             <div className="project__image">
               <img src={projectPlaceholder} alt={`${project.title} preview`} />
             </div>
@@ -27,14 +27,6 @@ export const Projects = () => {
             <div className="project__content">
               <h3 className="project__name">{project.title}</h3>
               <p className="project__description">{project.description}</p>
-              <div className="project__links">
-                {project.liveUrl && <a href={project.liveUrl} className="button">Live =&gt;</a>}
-                {project.githubUrl && (
-                  <a href={project.githubUrl} className="button">
-                    GitHub =&gt;
-                  </a>
-                )}
-              </div>
             </div>
           </article>
         ))}

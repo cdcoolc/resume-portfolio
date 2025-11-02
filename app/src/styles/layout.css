@@ -528,7 +528,7 @@
 }
 
 .about-card__meta {
-  color: var(--gray);
+  color: var(--primary);
   font-size: 12px;
 }
 
@@ -951,6 +951,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
+  justify-content: center;
 }
 
 .pill {
@@ -981,6 +982,14 @@
 
 .readmore summary::-webkit-details-marker { display: none; }
 .readmore summary::before { content: '▾'; margin-right: 8px; }
+
+.readmore__content {
+  display: grid;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+}
+
+.readmore__content p { color: var(--gray); }
 
 .media {
   display: inline-flex;

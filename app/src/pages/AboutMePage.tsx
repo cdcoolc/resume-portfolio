@@ -91,9 +91,33 @@ export const AboutMePage = () => {
 
             <details className="readmore">
               <summary>Read more</summary>
-              <p className="text-gray">
-                I’m a Financial Analyst with over seven years of experience driving financial intelligence, reporting automation, and strategic decision support across large-scale global operations. My work bridges finance and technology — leveraging tools like Power BI, Alteryx, SQL, and Oracle Fusion ERP to transform raw data into actionable insights that guide senior leadership. At FIS, I’ve led initiatives that modernized financial reporting for $200M+ in operations, cutting manual effort by over 50% through end-to-end automation and cross-system integration. I take pride in solving inefficiencies that slow business performance — whether that means developing AI-assisted reporting tools, redesigning forecasting models, or standardizing close processes across multiple sites. Throughout my career at CIT Bank and FIS, I’ve built a reputation for precision, innovation, and the ability to translate complex data into financial clarity that drives measurable results. Beyond the numbers, I’m passionate about empowering teams with smarter tools and forward-looking analytics that make finance not just a reporting function, but a strategic partner in growth.
-              </p>
+              <div className="readmore__content">
+                <p>
+                  I’m a Senior Financial Analyst with over seven years of experience driving financial intelligence,
+                  reporting automation, and strategic decision support across large-scale global operations.
+                </p>
+                <p>
+                  My work bridges finance and technology — leveraging tools like Power BI, Alteryx, SQL, and Oracle
+                  Fusion ERP to transform raw data into actionable insights that guide senior leadership.
+                </p>
+                <p>
+                  At FIS, I’ve led initiatives that modernized financial reporting for $200M+ in operations, cutting
+                  manual effort by over 50% through end-to-end automation and cross-system integration.
+                </p>
+                <p>
+                  I take pride in solving inefficiencies that slow business performance — whether that means developing
+                  AI-assisted reporting tools, redesigning forecasting models, or standardizing close processes across
+                  multiple sites.
+                </p>
+                <p>
+                  Throughout my career at CIT Bank and FIS, I’ve built a reputation for precision, innovation, and the
+                  ability to translate complex data into financial clarity that drives measurable results.
+                </p>
+                <p>
+                  Beyond the numbers, I’m passionate about empowering teams with smarter tools and forward-looking
+                  analytics that make finance not just a reporting function, but a strategic partner in growth.
+                </p>
+              </div>
             </details>
           </div>
         </div>

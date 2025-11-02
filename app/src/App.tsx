@@ -148,8 +148,8 @@ function App() {
 
         <section>
           <blockquote className="quote">
-            <p className="quote__text">With great power comes great electricity bill</p>
-            <cite className="quote__author">Dr. Who</cite>
+            <p className="quote__text">The goal is to turn data into information, and information into insight.</p>
+            <cite className="quote__author">Carly Fiorina</cite>
           </blockquote>
         </section>
 

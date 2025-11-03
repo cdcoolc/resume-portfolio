@@ -121,9 +121,19 @@ main.container.content {
   background-image: none;
 }
 
-/* Push the first section (hero) down by 10% of the viewport height */
+/* Keep hero close to header: 20px below */
 .content > section:first-of-type {
-  margin-top: 10vh;
+  margin-top: 0;
+}
+
+/* On small screens, keep a little breathing room under the fixed header */
+/* Add more breathing room under fixed header on smaller screens */
+@media (max-width: 1024px) {
+  .content > section:first-of-type { margin-top: 44px; }
+}
+
+@media (max-width: 768px) {
+  .content > section:first-of-type { margin-top: 64px; }
 }
 
 .container {

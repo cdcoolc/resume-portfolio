@@ -22,23 +22,19 @@ export const projects: Project[] = [
     id: 'ap-dashboard',
     title: 'Automated AP Dashboard & Reporting System',
     description:
-      'Developed an end-to-end reporting solution consolidating data from 5+ sources, cutting manual reporting time by 40% and delivering real-time visibility into $200M+ AP operations.',
+      'Developed an end-to-end reporting solution consolidating data from 3+ sources, cutting manual reporting time by 40% and delivering real-time visibility into $200M+ AP operations.',
     technologies: ['Power BI', 'Alteryx', 'SQL', 'Oracle Fusion'],
     image: imgAutomatedAPDashboardReporting,
     featured: true,
-    liveUrl: '#',
-    githubUrl: 'https://github.com/masih-azizpour',
   },
   {
     id: 'consolidation-platform',
     title: 'Financial Consolidation & Forecasting Platform',
     description:
-      'Led deployment of a global consolidation system integrating SAP, Oracle Fusion, and Hyperion to streamline quarter-close processes while maintaining 99.8% accuracy.',
+      'Supported the implementation and adoption of a global consolidation platform integrating SAP, Oracle Fusion, and Hyperion to streamline reporting and improve quarter-close.',
     technologies: ['SAP FI/CO', 'Oracle Fusion', 'Hyperion', 'Excel'],
     image: imgFinancialConsolidationForecasting,
     featured: true,
-    liveUrl: '#',
-    githubUrl: 'https://github.com/masih-azizpour',
   },
   {
     id: 'etl-workflow',
@@ -48,19 +44,15 @@ export const projects: Project[] = [
     technologies: ['Alteryx', 'SQL', 'Python', 'Oracle OTBI'],
     image: imgETLWorkflowOptimization,
     featured: true,
-    liveUrl: '#',
-    githubUrl: 'https://github.com/masih-azizpour',
   },
   {
     id: 'analytics-package',
     title: 'Executive Analytics Package',
     description:
-      'Designed monthly analytics packages blending Accounts Payable trends, cash flow analysis, and expense performance, informing $2M in strategic budget reallocations.',
+      'Developed a monthly executive analytics package integrating Accounts Payable trends, cash flow analysis, and expense performance metrics, delivering insights that influenced budget planning and enhanced financial strategy.',
     technologies: ['Power BI', 'Excel', 'PowerPoint'],
     image: imgExecutiveAnalyticsPackage,
     featured: false,
-    liveUrl: '#',
-    githubUrl: 'https://github.com/masih-azizpour',
   },
   {
     id: 'web-portal',
@@ -70,8 +62,6 @@ export const projects: Project[] = [
     technologies: ['React', 'TypeScript', 'Claude AI', 'REST APIs'],
     image: imgFinancialAnalyticsWebPortal,
     featured: false,
-    liveUrl: '#',
-    githubUrl: 'https://github.com/masih-azizpour',
   },
   {
     id: 'crm-enhancement',
@@ -81,7 +71,5 @@ export const projects: Project[] = [
     technologies: ['Salesforce', 'CRM Systems'],
     image: imgSalesforceCRMEnhancement,
     featured: false,
-    liveUrl: '#',
-    githubUrl: 'https://github.com/masih-azizpour',
   },
 ]

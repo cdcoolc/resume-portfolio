@@ -31,6 +31,9 @@ function App() {
     const pageRoutes = new Set(['/projects', '/skills', '/about-me'])
     if (pageRoutes.has(route)) {
       window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else if (route === 'home' || route === '') {
+      // Ensure navigating to #home or clearing the hash scrolls to top
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }, [route])
 
@@ -71,7 +74,10 @@ function App() {
             <a
               href="#home"
               className={`header__link${activeSection === 'home' ? ' header__link_active' : ''}`}
-              onClick={() => setActiveSection('home')}
+              onClick={() => {
+                setActiveSection('home')
+                window.scrollTo({ top: 0, behavior: 'smooth' })
+              }}
             >
               home
             </a>
@@ -117,6 +123,7 @@ function App() {
             setActiveSection('home')
             const el = document.getElementById('hamburger') as HTMLInputElement | null
             if (el) el.checked = false
+            window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
           home
@@ -223,7 +230,7 @@ function App() {
 
         <section id="about">
           <div className="section__header" style={{ alignItems: 'baseline' }}>
-            <h2 className="section__title">about-me</h2>
+            <h2 className="section__title">career-highlights</h2>
             <a href="#/about-me" className="header__link" style={{ marginLeft: 'auto' }}>
               Read more ~&gt;
             </a>

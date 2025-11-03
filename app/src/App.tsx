@@ -5,7 +5,7 @@ import heroImage from './assets/hero.png'
 import aboutImage from './assets/about-me-trans.png'
 import logoOutline from './assets/logo-outline.svg'
 import logoIcon from './assets/logo.svg'
-import githubIcon from './assets/github.svg'
+import emailIcon from './assets/email.svg'
 import { SecureContact } from './components/SecureContact'
 import { Projects } from './components/Projects'
 import { Experience } from './components/Experience'
@@ -27,6 +27,11 @@ function App() {
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
 
+  // Ensure navigating via "View all" or other hash routes lands at the top
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [route])
+
   return (
     <div className="page">
       <a href="#home" className="skip-link">Skip to content</a>
@@ -34,20 +39,22 @@ function App() {
         <span className="media-header__line" />
         <div className="media-header__links">
           <a
-            href="https://www.linkedin.com/in/masih-azizpour/"
+            href="https://www.linkedin.com/in/masih-a-717b55145"
             className="media__icon"
             title="LinkedIn"
             aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <img src={linkedinIcon} alt="LinkedIn" />
           </a>
           <a
-            href="https://github.com/masih-azizpour"
+            href="#contacts"
             className="media__icon"
-            title="GitHub"
-            aria-label="GitHub"
+            title="Email"
+            aria-label="Email"
           >
-            <img src={githubIcon} alt="GitHub" />
+            <img src={emailIcon} alt="Email" />
           </a>
         </div>
       </div>
@@ -157,7 +164,7 @@ function App() {
 
         <section id="about">
           <div className="section__header" style={{ alignItems: 'baseline' }}>
-            <h2 className="section__title">about</h2>
+            <h2 className="section__title">about-me</h2>
             <a href="#/about-me" className="header__link" style={{ marginLeft: 'auto' }}>
               Read more ~&gt;
             </a>
@@ -238,14 +245,16 @@ function App() {
                 <span className="contacts__label text-gray">Media</span>
                 <div className="contacts__icons">
                   <a
-                    href="https://www.linkedin.com/in/masih-azizpour/"
+                    href="https://www.linkedin.com/in/masih-a-717b55145"
                     className="media media__icon"
                     aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <img src={linkedinIcon} alt="LinkedIn" />
                   </a>
-                  <a href="https://github.com/masih-azizpour" className="media media__icon" aria-label="GitHub">
-                    <img src={githubIcon} alt="GitHub" />
+                  <a href="#contacts" className="media media__icon" aria-label="Email">
+                    <img src={emailIcon} alt="Email" />
                   </a>
                 </div>
               </div>
@@ -268,18 +277,20 @@ function App() {
             <h3>Media</h3>
             <div className="footer__links">
               <a
-                href="https://www.linkedin.com/in/masih-azizpour/"
+                href="https://www.linkedin.com/in/masih-a-717b55145"
                 className="media media__icon"
                 aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <img src={linkedinIcon} alt="LinkedIn" />
               </a>
               <a
-                href="https://github.com/masih-azizpour"
+                href="#contacts"
                 className="media media__icon"
-                aria-label="GitHub"
+                aria-label="Email"
               >
-                <img src={githubIcon} alt="GitHub" />
+                <img src={emailIcon} alt="Email" />
               </a>
             </div>
           </div>

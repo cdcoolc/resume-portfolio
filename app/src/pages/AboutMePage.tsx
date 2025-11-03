@@ -3,12 +3,17 @@ import aboutImage from '../assets/about-me-trans.png'
 
 export const AboutMePage = () => {
   useEffect(() => {
+    // Ensure page starts at top and accordion is closed on load
+    window.scrollTo({ top: 0, behavior: 'auto' })
     const DURATION = 800
     const detailsList = Array.from(
       document.querySelectorAll('#about-me-page .accordion details'),
     ) as HTMLDetailsElement[]
 
     const cleanups: Array<() => void> = []
+
+    // Close all sections by default on initial render
+    detailsList.forEach((d) => (d.open = false))
 
     detailsList.forEach((detailsEl) => {
       const summary = detailsEl.querySelector('summary') as HTMLElement | null
@@ -123,7 +128,7 @@ export const AboutMePage = () => {
         </div>
 
         <div className="accordion" style={{ marginTop: 'var(--space-xl)' }}>
-          <details open>
+          <details>
             <summary>Automated Financial Workflows</summary>
             <div className="accordion__content"><div>
               <p><strong>Situation:</strong> Manual AP reporting caused delays and errors.<br />

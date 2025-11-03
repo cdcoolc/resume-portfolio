@@ -9,6 +9,14 @@ export interface Project {
   githubUrl?: string
 }
 
+// Project images (updated)
+import imgAutomatedAPDashboardReporting from '../assets/projects/Automated AP Dashboard & Reporting System.png'
+import imgFinancialConsolidationForecasting from '../assets/projects/Financial Consolidation & Forecasting Platform.png'
+import imgETLWorkflowOptimization from '../assets/projects/ETL Workflow Optimization.png'
+import imgExecutiveAnalyticsPackage from '../assets/projects/Executive Analytics Package.png'
+import imgFinancialAnalyticsWebPortal from '../assets/projects/Financial Analytics Web Portal.png'
+import imgSalesforceCRMEnhancement from '../assets/projects/Salesforce CRM Enhancement Initiative.png'
+
 export const projects: Project[] = [
   {
     id: 'ap-dashboard',
@@ -16,7 +24,7 @@ export const projects: Project[] = [
     description:
       'Developed an end-to-end reporting solution consolidating data from 5+ sources, cutting manual reporting time by 40% and delivering real-time visibility into $200M+ AP operations.',
     technologies: ['Power BI', 'Alteryx', 'SQL', 'Oracle Fusion'],
-    image: '/src/assets/project-placeholder.svg',
+    image: imgAutomatedAPDashboardReporting,
     featured: true,
     liveUrl: '#',
     githubUrl: 'https://github.com/masih-azizpour',
@@ -27,7 +35,7 @@ export const projects: Project[] = [
     description:
       'Led deployment of a global consolidation system integrating SAP, Oracle Fusion, and Hyperion to streamline quarter-close processes while maintaining 99.8% accuracy.',
     technologies: ['SAP FI/CO', 'Oracle Fusion', 'Hyperion', 'Excel'],
-    image: '/src/assets/project-placeholder.svg',
+    image: imgFinancialConsolidationForecasting,
     featured: true,
     liveUrl: '#',
     githubUrl: 'https://github.com/masih-azizpour',
@@ -38,7 +46,7 @@ export const projects: Project[] = [
     description:
       'Built modular Alteryx workflows that automated data ingestion from multiple ERP systems, improving processing efficiency by 50% and enabling real-time analytics.',
     technologies: ['Alteryx', 'SQL', 'Python', 'Oracle OTBI'],
-    image: '/src/assets/project-placeholder.svg',
+    image: imgETLWorkflowOptimization,
     featured: true,
     liveUrl: '#',
     githubUrl: 'https://github.com/masih-azizpour',
@@ -49,7 +57,7 @@ export const projects: Project[] = [
     description:
       'Designed monthly analytics packages blending Accounts Payable trends, cash flow analysis, and expense performance, informing $2M in strategic budget reallocations.',
     technologies: ['Power BI', 'Excel', 'PowerPoint'],
-    image: '/src/assets/project-placeholder.svg',
+    image: imgExecutiveAnalyticsPackage,
     featured: false,
     liveUrl: '#',
     githubUrl: 'https://github.com/masih-azizpour',
@@ -60,7 +68,7 @@ export const projects: Project[] = [
     description:
       'Built a custom web application combining real-time data visualizations with AI-assisted reporting workflows to empower stakeholders with on-demand insights.',
     technologies: ['React', 'TypeScript', 'Claude AI', 'REST APIs'],
-    image: '/src/assets/project-placeholder.svg',
+    image: imgFinancialAnalyticsWebPortal,
     featured: false,
     liveUrl: '#',
     githubUrl: 'https://github.com/masih-azizpour',
@@ -71,10 +79,9 @@ export const projects: Project[] = [
     description:
       'Collaborated on UAT and optimization for a Salesforce CRM rollout supporting 50+ users, improving lease management workflows and customer tracking.',
     technologies: ['Salesforce', 'CRM Systems'],
-    image: '/src/assets/project-placeholder.svg',
+    image: imgSalesforceCRMEnhancement,
     featured: false,
     liveUrl: '#',
     githubUrl: 'https://github.com/masih-azizpour',
   },
 ]
-

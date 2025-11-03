@@ -14,7 +14,7 @@ export const ProjectsPage = () => {
           {projects.map((project) => (
             <article key={project.id} className="project">
               <div className="project__image">
-                <img src={projectPlaceholder} alt={`${project.title} preview`} />
+                <img src={project.image || projectPlaceholder} alt={`${project.title} preview`} />
               </div>
               <div className="project__techs">{project.technologies.join('  ')}</div>
               <div className="project__content">

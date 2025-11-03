@@ -115,6 +115,12 @@
   gap: var(--space-2xl);
 }
 
+/* Remove background pattern on all page main containers */
+main.container.content {
+  background-color: var(--background);
+  background-image: none;
+}
+
 /* Push the first section (hero) down by 10% of the viewport height */
 .content > section:first-of-type {
   margin-top: 10vh;
@@ -1266,6 +1272,12 @@ body {
   min-height: 100vh;
   line-height: var(--line-height-base);
   background-color: var(--background);
+  /* Subtle purple dot pattern */
+  background-image:
+    radial-gradient(circle, var(--primary-op) 1.2px, transparent 1.3px),
+    radial-gradient(circle, var(--primary-op) 1.2px, transparent 1.3px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
   color: var(--white);
   font-family: var(--font-primary);
   display: flex;

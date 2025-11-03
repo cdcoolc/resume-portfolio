@@ -23,6 +23,12 @@ body {
     min-height: 100vh;
     line-height: var(--line-height-base);
     background-color: var(--background);
+    /* Subtle purple dot pattern */
+    background-image:
+      radial-gradient(circle, var(--primary-op) 1.2px, transparent 1.3px),
+      radial-gradient(circle, var(--primary-op) 1.2px, transparent 1.3px);
+    background-size: 24px 24px;
+    background-position: 0 0, 12px 12px;
     color: var(--white);
     font-family: var(--font-primary);
     font-size: var(--font-size-base);

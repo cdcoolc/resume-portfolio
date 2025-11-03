@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import aboutImage from '../assets/about-me-trans.png'
+import aboutImage from '../assets/site/about-me-trans.png'
 
 export const AboutMePage = () => {
   useEffect(() => {

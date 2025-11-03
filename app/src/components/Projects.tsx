@@ -13,7 +13,7 @@ export const Projects = () => {
       <div className="section__header" style={{ alignItems: 'baseline' }}>
         <h2 className="section__title">projects</h2>
         <a href="#/projects" className="header__link" style={{ marginLeft: 'auto' }}>
-          View all ~~&gt;
+          View all ~&gt;
         </a>
       </div>
 

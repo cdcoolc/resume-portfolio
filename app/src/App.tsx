@@ -1,8 +1,7 @@
 import { useState } from 'react'
 
 import linkedinIcon from './assets/linkedin.svg'
-import heroImage from './assets/hero.png'
-import aboutImage from './assets/about-me-trans.png'
+import heroImage from './assets/site/hero.png'
 import logoOutline from './assets/logo-outline.svg'
 import logoIcon from './assets/logo.svg'
 import emailIcon from './assets/email.svg'

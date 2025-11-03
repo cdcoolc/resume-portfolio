@@ -109,6 +109,63 @@ function App() {
 
       <input type="checkbox" className="hamburger" id="hamburger" aria-hidden="true" />
       <label htmlFor="hamburger" className="hamburger-label" aria-hidden="true" />
+      <nav className="mobile-nav" aria-label="Mobile">
+        <a
+          href="#home"
+          className={`mobile-nav__link${activeSection === 'home' ? ' mobile-nav__link_active' : ''}`}
+          onClick={() => {
+            setActiveSection('home')
+            const el = document.getElementById('hamburger') as HTMLInputElement | null
+            if (el) el.checked = false
+          }}
+        >
+          home
+        </a>
+        <a
+          href="#projects"
+          className={`mobile-nav__link${activeSection === 'projects' ? ' mobile-nav__link_active' : ''}`}
+          onClick={() => {
+            setActiveSection('projects')
+            const el = document.getElementById('hamburger') as HTMLInputElement | null
+            if (el) el.checked = false
+          }}
+        >
+          projects
+        </a>
+        <a
+          href="#about"
+          className={`mobile-nav__link${activeSection === 'about' ? ' mobile-nav__link_active' : ''}`}
+          onClick={() => {
+            setActiveSection('about')
+            const el = document.getElementById('hamburger') as HTMLInputElement | null
+            if (el) el.checked = false
+          }}
+        >
+          about-me
+        </a>
+        <a
+          href="#experience"
+          className={`mobile-nav__link${activeSection === 'experience' ? ' mobile-nav__link_active' : ''}`}
+          onClick={() => {
+            setActiveSection('experience')
+            const el = document.getElementById('hamburger') as HTMLInputElement | null
+            if (el) el.checked = false
+          }}
+        >
+          experience
+        </a>
+        <a
+          href="#contacts"
+          className={`mobile-nav__link${activeSection === 'contacts' ? ' mobile-nav__link_active' : ''}`}
+          onClick={() => {
+            setActiveSection('contacts')
+            const el = document.getElementById('hamburger') as HTMLInputElement | null
+            if (el) el.checked = false
+          }}
+        >
+          contacts
+        </a>
+      </nav>
 
       {route === '/projects' ? (
         <ProjectsPage />

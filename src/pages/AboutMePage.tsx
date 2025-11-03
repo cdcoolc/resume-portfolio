@@ -116,7 +116,7 @@ export const AboutMePage = () => {
           <p className="text-gray" style={{ marginLeft: 'auto' }}>Background, highlights, and case studies</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: 'var(--space-lg)', alignItems: 'start' }}>
+        <div className="about-me__grid">
           <div className="about-me__image" style={{ border: 'var(--border-primary)', padding: 'var(--space-sm)', background: 'var(--background-dark)' }}>
             <img src={aboutImage} alt="Profile" style={{ width: '100%', display: 'block' }} />
           </div>

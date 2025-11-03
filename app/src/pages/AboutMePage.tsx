@@ -60,6 +60,52 @@ export const AboutMePage = () => {
       cleanups.push(() => summary.removeEventListener('click', onClick))
     })
 
+    // Soft animation for the top Read more section
+    const readMore = document.querySelector('#about-me-page details.readmore') as HTMLDetailsElement | null
+    if (readMore) {
+      readMore.open = false
+      const summary = readMore.querySelector('summary') as HTMLElement | null
+      const content = readMore.querySelector('.readmore__content') as HTMLElement | null
+      if (summary && content) {
+        const onClick = (e: Event) => {
+          e.preventDefault()
+          const isOpen = readMore.open
+          if (isOpen) {
+            const start = content.scrollHeight
+            content.style.height = `${start}px`
+            content.style.opacity = '1'
+            requestAnimationFrame(() => {
+              content.style.transition = `height ${DURATION}ms cubic-bezier(0.2,0,0,1), opacity 500ms ease`
+              content.style.height = '0px'
+              content.style.opacity = '0'
+            })
+            window.setTimeout(() => {
+              readMore.open = false
+              content.style.transition = ''
+              content.style.height = ''
+              content.style.opacity = ''
+            }, DURATION)
+          } else {
+            readMore.open = true
+            const end = content.scrollHeight
+            content.style.height = '0px'
+            content.style.opacity = '0'
+            requestAnimationFrame(() => {
+              content.style.transition = `height ${DURATION}ms cubic-bezier(0.2,0,0,1), opacity 500ms ease`
+              content.style.height = `${end}px`
+              content.style.opacity = '1'
+            })
+            window.setTimeout(() => {
+              content.style.transition = ''
+              content.style.height = ''
+            }, DURATION)
+          }
+        }
+        summary.addEventListener('click', onClick)
+        cleanups.push(() => summary.removeEventListener('click', onClick))
+      }
+    }
+
     return () => cleanups.forEach((fn) => fn())
   }, [])
   return (

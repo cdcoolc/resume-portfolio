@@ -27,9 +27,12 @@ function App() {
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
 
-  // Ensure navigating via "View all" or other hash routes lands at the top
+  // Scroll to top only for page routes (not in-page section anchors)
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    const pageRoutes = new Set(['/projects', '/skills', '/about-me'])
+    if (pageRoutes.has(route)) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
   }, [route])
 
   return (

@@ -3,7 +3,7 @@ import { projects } from '../data/projects'
 import projectPlaceholder from '../assets/project-placeholder.svg'
 
 export const Projects = () => {
-  const [showAll, setShowAll] = useState(false)
+  const [showAll] = useState(false)
 
   const featuredProjects = projects.filter((p) => p.featured)
   const otherProjects = projects.filter((p) => !p.featured)

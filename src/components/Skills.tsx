@@ -1,21 +1,7 @@
-import { skillsData } from '../data/skills'
 import logoOutline from '../assets/logo-outline.svg'
 // pixel-style decorative shapes, dots, and logo are drawn/positioned via CSS
 
-// Homepage shortlist: only names, financial-analyst relevant
-const HOMEPAGE_SHORTLIST = [
-  'Power BI',
-  'Alteryx',
-  'SQL',
-  'Financial Modeling',
-  'SAP FI/CO',
-  'Python',
-]
-
 export const Skills = () => {
-  // Flatten skills and pick shortlist
-  const all = skillsData.flatMap((c) => c.items.map((i) => ({ ...i, category: c.category })))
-  const shortlist = all.filter((s) => HOMEPAGE_SHORTLIST.includes(s.name))
 
   return (
     <section id="skills" style={{ position: 'relative', overflow: 'hidden' }}>
